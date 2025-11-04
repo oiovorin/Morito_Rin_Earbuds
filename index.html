@@ -1,16 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <title>Novo EarBuds</title>
+    <title>&lt;model-viewer&gt; template</title>
     <meta charset="utf-8">
+    <meta name="description" content="&lt;model-viewer&gt; template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/main.css" rel="stylesheet"/>
-    <!-- link to greensock main library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
   </head>
   <body>
-  <!-- Loads <model-viewer> for browsers: -->
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+    <!-- <model-viewer> HTML element -->
+    <model-viewer src="model/modeling.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.jpeg" shadow-intensity="1">
+    <button class="Hotspot" slot="hotspot-1" data-position="0.025235061689867437m -0.10902403668743327m -0.09052553921223072m" data-normal="0.12911712139825884m 0.04858677574959183m -0.9904383343672064m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation" id="hotspot-1">
+          <h2>Ultra-fast Charging</h2>
+          <p>Ultra-Fast Charging lets you power up your earbuds in just a few minutes, giving you hours of uninterrupted listening so you're always ready to go, no matter where life takes you.</p>
+        </div>
+    </button>
+    
+    <button class="Hotspot" slot="hotspot-2" data-position="0.0652302755393506m -0.01849822416170982m -0.028021389136281383m" data-normal="-0.0014037155708903303m 0.001150336070610719m 0.9999983531534044m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation" id="hotspot-2">
+          <h2>Volume knob</h2>
+        <p>Precision volume handles allow you to fine-tune your audio exactly the way you like.</p>
+      </div>
+    </button>
+    
+    <button class="Hotspot" slot="hotspot-3" data-position="0.019214270787130783m 0.10168876519649836m -0.138710595052622m" data-normal="0.532799633462331m 0.8228906437519543m -0.19742223534318565m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation" id="hotspot-3">
+          <h2>Cushioned For Your Ears</h2>
+        <p>Soft cushions gently rest in your ears, providing all-day comfort and reducing pressure for a perfect listening experience.</p>
+      </div>
+    </button>
+    
+    <button class="Hotspot" slot="hotspot-4" data-position="0.04123076205761963m -0.09763164780449468m -0.05690312240763523m" data-normal="0.0005397911557401062m -0.0001380561516387536m 0.9999998447829915m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation" id="hotspot-4">
+          <h2>Comfort-Lock Ear Wings</h2>
+        <p>Comfort-Lock Ear Wings gently hug your ears, providing a secure and comfortable fit that stays in place all day.</p>
+      </div>
+    </button>
+    
+    <button class="Hotspot" slot="hotspot-6" data-position="-0.08463737651843259m 0.007312962978927168m -0.046971126196686114m" data-normal="-0.9421361327232582m -0.008911152966126087m 0.3351120689710793m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation" id="hotspot-5">
+          <h2>Perfect fit curb</h2>
+        <p>Precision-engineered curves follow the natural shape of your ears, offering a secure and comfortable fit that stays in place throughout the day</p>
+      </div>
+    </button>
+
+
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+    <button slot="ar-button" id="ar-button">
+        View in your space
+    </button>
+</model-viewer>
+<!-- link to greensock main library -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <!-- Loads <model-viewer> for browsers: -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <!-- Our JS folder last -->
     <script src="js/main.js"></script>
   </body>
 </html>
