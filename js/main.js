@@ -37,10 +37,10 @@
 ]
 
 //function
-function loadInfo () {
+function getInfo () {
   infoBoxes.forEach((infoBox, index) => {
    // console.log(index + 1);
-   // selected will be the infoBOx on out page, e.g. hotsopt-1, hotspot-2, etc
+   // selected will be the infoBox on out page, e.g. hotsopt-1, hotspot-2, etc
     let selected = document.querySelector(`#hotspot-${index+1}`);
     //console.log(selected);
 
@@ -67,27 +67,52 @@ function loadInfo () {
   });
 }
 
-loadInfo();
+getInfo();
 
-   function showInfo() {
-    //console.log(this.slot);
-    //console.log(`#${this.slot}`);
-    //since the slot value matches the id value I can use the slot value as a selector to get to the div I want.
-    let selected = document.querySelector(`#${this.slot}`);
-    gsap.to(selected, { duration: 1, autoAlpha: 1 });
-  }
+// chack whice hotspot is selected now
+let activeWindow = null;
 
-  function hideInfo() {
-    //console.log(this.slot);
-    //console.log(`#${this.slot}`);
+   function popUpWindow() {
     let selected = document.querySelector(`#${this.slot}`);
-    gsap.to(selected, { duration: 1, autoAlpha: 0 });
+
+    // if the selected window already open => close it
+    if (activeWindow === selected) {
+      gsap.to(selected, {  duration: 0.2, autoAlpha: 0, scale: 0});
+      activeWindow = null;
+      return;
+    }
+
+    // if other window is open => close that window
+    if (activeWindow) {
+      gsap.to(activeWindow, { duration: 0.2, autoAlpha: 0, scale: 0 }); 
+    }
+
+    // make window small so that looks like pops up
+    gsap.set(selected, { scale: 0, autoAlpha: 0 });
+
+    // window pop up animatiion
+    gsap.to(selected, {
+      duration: 0.3,
+      autoAlpha: 1,
+      scale: 1.01, // make a little bit bigger
+      ease: "back.out(1.5)",
+
+      // when window pops up and became little bit bigger => make it scale: 1
+      onComplete: () => {
+        gsap.to(selected, { 
+          duration: 0.05, 
+          scale: 1 }); 
+      }
+    });
+
+    // update activeWindow
+    activeWindow = selected;
+
   }
   
- hotspots.forEach(function (hotspot) {
-    hotspot.addEventListener("mouseenter", showInfo);
-    hotspot.addEventListener("mouseleave", hideInfo);
-  });
+ hotspots.forEach(function(hotspot) {
+  hotspot.addEventListener("click", popUpWindow);
+});
   
   // Handles loading the events for <model-viewer>'s slotted progress bar
 const onProgress = (event) => {
