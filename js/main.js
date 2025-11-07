@@ -7,31 +7,31 @@
     {
       title: "Ultra-fast Charging",
       text: "Ultra-Fast Charging lets you power up your earbuds in just a few minutes, giving you hours of uninterrupted listening so you're always ready to go, no matter where life takes you.",
-      image: "images/ameofimage.jpg",
+      image: "../images/charge.svg",
       alt: "alttext"
   },
   {
       title: "Volume knob",
       text: "Precision volume handles allow you to fine-tune your audio exactly the way you like.",
-      image: "images/ameofimage.jpg",
+      image: "../images/sound.svg",
       alt: "alttext"
   },
   {
       title: "Cushioned For Your Ears",
       text: "Soft cushions gently rest in your ears, providing all-day comfort and reducing pressure for a perfect listening experience.",
-      image: "images/ameofimage.jpg",
+      image: "../images/soft.svg",
       alt: "alttext"
   },
   {
       title: "Comfort-lock Ear Wings",
       text: "Comfort-Lock Ear Wings gently hug your ears, providing a secure and comfortable fit that stays in place all day.",
-      image: "images/ameofimage.jpg",
+      image: "../images/clock.svg",
       alt: "alttext"
   },
   {
       title: "Perfect fit curb",
       text: "Precision-engineered curves follow the natural shape of your ears, offering a secure and comfortable fit that stays in place throughout the day",
-      image: "images/ameofimage.jpg",
+      image: "../images/music.svg",
       alt: "alttext"
   }
 ]
@@ -59,9 +59,16 @@ function getInfo () {
     imageElement.src = infoBox.image;
     imageElement.alt = infoBox.alt;
 
+    
+    // create wrapper for img and h2 to use flex box
+    const topWrapper = document.createElement('div');
+    topWrapper.classList.add('top-flex');
+    topWrapper.appendChild(imageElement);
+    topWrapper.appendChild(titleElement);
 
-    // lets add the h2 to the selected hotspot
-    selected.appendChild(titleElement);
+
+    // add the wrapper to the selected hotspot
+    selected.appendChild(topWrapper);
     // lets add the p to the selected hotspot
     selected.appendChild(textElement);
   });

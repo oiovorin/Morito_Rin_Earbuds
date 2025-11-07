@@ -1,3 +1,5 @@
+@use '../abstracts/mixins';
+
 :not(:defined) > * {
   display: none;
 }
@@ -70,12 +72,9 @@ body {
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
   color: rgba(0, 0, 0, 0.8);
-  display: block;
   font-family: Futura, Helvetica Neue, sans-serif;
-  font-size: 18px;
-  font-weight: 700;
   left: calc(100% + 1em);
-  max-width: 250px;
+  max-width: 350px;
   overflow-wrap: break-word;
   padding: 0.5em 1em;
   position: absolute;
@@ -187,5 +186,14 @@ h2 {
 p {
     font-size: 16px;
     font-weight: normal;
-    margin: 30px auto;
+    margin: 10px auto 20px auto;
 }
+
+.HotspotAnnotation img {
+  width: 70px;
+  height: auto;
+}
+
+ .top-flex {
+    @include mixins.flex-center-horiz
+  }
