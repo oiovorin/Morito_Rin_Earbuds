@@ -118,7 +118,7 @@ let activeWindow = null;
   }
   
  hotspots.forEach(function(hotspot) {
-  hotspot.addEventListener("click", popUpWindow);
+  hotspot.addEventListener("mouseenter", popUpWindow);
 });
   
   // Handles loading the events for <model-viewer>'s slotted progress bar
@@ -135,3 +135,4 @@ const onProgress = (event) => {
 };
 document.querySelector('model-viewer').addEventListener('progress', onProgress);
 })();
+
