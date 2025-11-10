@@ -1,3 +1,5 @@
+@use '../abstracts/mixins';
+
 :not(:defined) > * {
   display: none;
 }
@@ -12,15 +14,27 @@ body {
   width: 100%;
   height: 100%;
 }
+#model-viewer-section {
+  margin-top: 100px;
+  background-color: #d5e9e9;
+}
 
-model-viewer {
+#model-window {
+  width: 100%;
+  height: 600px; 
+  border-radius: 12px;
+  overflow: auto;
+}
+
+#model-window model-viewer {
   width: 100%;
   height: 90%;
-  background-color: #ffffff;
+  display: block;
+  background-color: #d5e9e9;
 }
 
 .Hotspot {
-  background: #fff;
+  background: #6aa8cf;
   border-radius: 32px;
   border: 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
@@ -55,14 +69,12 @@ model-viewer {
 }
 
 .HotspotAnnotation{
+  visibility: hidden;
   background: #fff;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
   color: rgba(0, 0, 0, 0.8);
-  display: block;
   font-family: Futura, Helvetica Neue, sans-serif;
-  font-size: 18px;
-  font-weight: 700;
   left: calc(100% + 1em);
   max-width: 250px;
   overflow-wrap: break-word;
@@ -168,11 +180,55 @@ model-viewer > #ar-prompt > img {
   animation: circle 4s linear infinite;
 }
 
-h2 {
-    font-size: 20px;
+.HotspotAnnotation h2 {
+    font-size: 18px;
+    margin: 20px auto;
 }
 
-p {
-    font-size: 16px;
+.HotspotAnnotation p {
+    font-size: 14px;
     font-weight: normal;
+    margin: 10px auto 20px auto;
 }
+
+.HotspotAnnotation img {
+  width: 50px;
+  height: auto;
+}
+
+ .top-flex {
+    @include mixins.flex-center-horiz
+  }
+
+  #model-viewer-title {
+    display: block;
+  }
+
+  #model-viewer-title h2 {
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 150px;
+  }
+  
+   #model-viewer-title p {
+    margin-top: 10px;
+    font-size: 20px;
+   }
+
+   @media screen and (min-width:768px) {
+    #model-viewer-title {
+      position: absolute;
+      left: 5%;
+      z-index: 20;
+    }
+
+    
+   }
+
+   @media screen and (min-width:1200px) {
+    #model-viewer-title {
+      position: absolute;
+      left: 14%;
+      z-index: 20;
+    }
+  }

@@ -7,40 +7,40 @@
     {
       title: "Ultra-fast Charging",
       text: "Ultra-Fast Charging lets you power up your earbuds in just a few minutes, giving you hours of uninterrupted listening so you're always ready to go, no matter where life takes you.",
-      image: "images/ameofimage.jpg",
+      image: "../images/charge.svg",
       alt: "alttext"
   },
   {
       title: "Volume knob",
       text: "Precision volume handles allow you to fine-tune your audio exactly the way you like.",
-      image: "images/ameofimage.jpg",
+      image: "../images/sound.svg",
       alt: "alttext"
   },
   {
       title: "Cushioned For Your Ears",
       text: "Soft cushions gently rest in your ears, providing all-day comfort and reducing pressure for a perfect listening experience.",
-      image: "images/ameofimage.jpg",
+      image: "../images/soft.svg",
       alt: "alttext"
   },
   {
       title: "Comfort-lock Ear Wings",
       text: "Comfort-Lock Ear Wings gently hug your ears, providing a secure and comfortable fit that stays in place all day.",
-      image: "images/ameofimage.jpg",
+      image: "../images/clock.svg",
       alt: "alttext"
   },
   {
       title: "Perfect fit curb",
       text: "Precision-engineered curves follow the natural shape of your ears, offering a secure and comfortable fit that stays in place throughout the day",
-      image: "images/ameofimage.jpg",
+      image: "../images/music.svg",
       alt: "alttext"
   }
 ]
 
 //function
-function loadInfo () {
+function getInfo () {
   infoBoxes.forEach((infoBox, index) => {
    // console.log(index + 1);
-   // selected will be the infoBOx on out page, e.g. hotsopt-1, hotspot-2, etc
+   // selected will be the infoBox on out page, e.g. hotsopt-1, hotspot-2, etc
     let selected = document.querySelector(`#hotspot-${index+1}`);
     //console.log(selected);
 
@@ -59,35 +59,67 @@ function loadInfo () {
     imageElement.src = infoBox.image;
     imageElement.alt = infoBox.alt;
 
+    
+    // create wrapper for img and h2 to use flex box
+    const topWrapper = document.createElement('div');
+    topWrapper.classList.add('top-flex');
+    topWrapper.appendChild(imageElement);
+    topWrapper.appendChild(titleElement);
 
-    // lets add the h2 to the selected hotspot
-    selected.appendChild(titleElement);
+
+    // add the wrapper to the selected hotspot
+    selected.appendChild(topWrapper);
     // lets add the p to the selected hotspot
     selected.appendChild(textElement);
   });
 }
 
-loadInfo();
+getInfo();
 
-   function showInfo() {
-    //console.log(this.slot);
-    //console.log(`#${this.slot}`);
-    //since the slot value matches the id value I can use the slot value as a selector to get to the div I want.
-    let selected = document.querySelector(`#${this.slot}`);
-    gsap.to(selected, { duration: 1, autoAlpha: 1 });
-  }
+// chack whice hotspot is selected now
+let activeWindow = null;
 
-  function hideInfo() {
-    //console.log(this.slot);
-    //console.log(`#${this.slot}`);
+   function popUpWindow() {
     let selected = document.querySelector(`#${this.slot}`);
-    gsap.to(selected, { duration: 1, autoAlpha: 0 });
+
+    // if the selected window already open => close it
+    if (activeWindow === selected) {
+      gsap.to(selected, {  duration: 0.2, autoAlpha: 0, scale: 0});
+      activeWindow = null;
+      return;
+    }
+
+    // if other window is open => close that window
+    if (activeWindow) {
+      gsap.to(activeWindow, { duration: 0.2, autoAlpha: 0, scale: 0 }); 
+    }
+
+    // make window small so that looks like pops up
+    gsap.set(selected, { scale: 0, autoAlpha: 0 });
+
+    // window pop up animatiion
+    gsap.to(selected, {
+      duration: 0.3,
+      autoAlpha: 1,
+      scale: 1.01, // make a little bit bigger
+      ease: "back.out(1.5)",
+
+      // when window pops up and became little bit bigger => make it scale: 1
+      onComplete: () => {
+        gsap.to(selected, { 
+          duration: 0.05, 
+          scale: 1 }); 
+      }
+    });
+
+    // update activeWindow
+    activeWindow = selected;
+
   }
   
- hotspots.forEach(function (hotspot) {
-    hotspot.addEventListener("mouseenter", showInfo);
-    hotspot.addEventListener("mouseleave", hideInfo);
-  });
+ hotspots.forEach(function(hotspot) {
+  hotspot.addEventListener("click", popUpWindow);
+});
   
   // Handles loading the events for <model-viewer>'s slotted progress bar
 const onProgress = (event) => {

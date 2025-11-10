@@ -8,10 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/grid.css">
     <link href="css/main.css" rel="stylesheet">
   </head>
   <body>
-    <!-- <model-viewer> HTML element -->
+    <div class="grid-con" id="model-viewer-section">
+      <div id="model-viewer-title" class="col-span-full">
+        <h2>Explore Features</h2>
+        <p>Loop Earbuds Pro</p>
+      </div>
+    <div id="model-window" class="col-span-full m-col-start-4 m-col-end-13 l-col-start-3 l-col-end-13">
     <model-viewer src="model/earbuds-modeling.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1.34" camera-orbit="-32deg 77.11deg 0.5381m" field-of-view="30deg">
 
 
@@ -48,6 +54,8 @@
         View in your space
     </button>
 </model-viewer>
+</div>
+</div>
 <!-- link to greensock main library -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <!-- Loads <model-viewer> for browsers: -->
