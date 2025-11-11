@@ -76,24 +76,8 @@ function getInfo () {
 
 getInfo();
 
-// chack whice hotspot is selected now
-let activeWindow = null;
-
    function popUpWindow() {
     let selected = document.querySelector(`#${this.slot}`);
-
-    // if the selected window already open => close it
-    if (activeWindow === selected) {
-      gsap.to(selected, {  duration: 0.2, autoAlpha: 0, scale: 0});
-      activeWindow = null;
-      return;
-    }
-
-    // if other window is open => close that window
-    if (activeWindow) {
-      gsap.to(activeWindow, { duration: 0.2, autoAlpha: 0, scale: 0 }); 
-    }
-
     // make window small so that looks like pops up
     gsap.set(selected, { scale: 0, autoAlpha: 0 });
 
@@ -112,15 +96,19 @@ let activeWindow = null;
       }
     });
 
-    // update activeWindow
-    activeWindow = selected;
+  }
 
+  function closeWindow() {
+    let selected = document.querySelector(`#${this.slot}`);
+     gsap.to(selected, { duration: 0.3, autoAlpha: 0, scale: 0, opacity: 0 });
   }
   
  hotspots.forEach(function(hotspot) {
   hotspot.addEventListener("mouseenter", popUpWindow);
+  hotspot.addEventListener("mouseleave", closeWindow);
 });
-  
+
+
   // Handles loading the events for <model-viewer>'s slotted progress bar
 const onProgress = (event) => {
   const progressBar = event.target.querySelector('.progress-bar');

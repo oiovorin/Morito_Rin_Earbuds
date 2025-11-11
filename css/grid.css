@@ -62,6 +62,7 @@ body, p, h1, h2, h3, h4, h5 {
 
 .full-width-grid-con > .grid-con {
   grid-column: 2 / 3;
+  width: 100%;
 }
 
 /* A keyword indicating that the property contributes nothing to the grid item's placement, indicating auto-placement, an automatic span, or a default span of 1. */
