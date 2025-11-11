@@ -6,7 +6,7 @@
   const infoBoxes = [
     {
       title: "Ultra-fast Charging",
-      text: "Ultra-Fast Charging lets you power up your earbuds in just a few minutes, giving you hours of uninterrupted listening so you're always ready to go, no matter where life takes you.",
+      text: "Ultra-Fast Charging powers your earbuds in minutes for hours of listening.",
       image: "../images/charge.svg",
       alt: "alttext"
   },
@@ -17,20 +17,20 @@
       alt: "alttext"
   },
   {
-      title: "Cushioned For Your Ears",
-      text: "Soft cushions gently rest in your ears, providing all-day comfort and reducing pressure for a perfect listening experience.",
+      title: "Ear Cushions",
+      text: "Soft cushions rest gently for all-day comfort and reduced pressure.",
       image: "../images/soft.svg",
       alt: "alttext"
   },
   {
       title: "Comfort-lock Ear Wings",
-      text: "Comfort-Lock Ear Wings gently hug your ears, providing a secure and comfortable fit that stays in place all day.",
+      text: "Comfort-Lock Ear Wings hug your ears for a secure, all-day fit.",
       image: "../images/clock.svg",
       alt: "alttext"
   },
   {
       title: "Perfect fit curb",
-      text: "Precision-engineered curves follow the natural shape of your ears, offering a secure and comfortable fit that stays in place throughout the day",
+      text: "Precision curves follow your ears for a secure, comfortable fit all day.",
       image: "../images/music.svg",
       alt: "alttext"
   }
