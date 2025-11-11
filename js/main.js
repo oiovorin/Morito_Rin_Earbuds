@@ -8,51 +8,46 @@
       title: "Ultra-fast Charging",
       text: "Ultra-Fast Charging powers your earbuds in minutes for hours of listening.",
       image: "../images/charge.svg",
-      alt: "alttext"
+      alt: "icon for charging feature"
   },
   {
       title: "Volume knob",
       text: "Precision volume handles allow you to fine-tune your audio exactly the way you like.",
       image: "../images/sound.svg",
-      alt: "alttext"
+      alt: "icon for volume knob feature"
   },
   {
       title: "Ear Cushions",
       text: "Soft cushions rest gently for all-day comfort and reduced pressure.",
       image: "../images/soft.svg",
-      alt: "alttext"
+      alt: "icon for silicone of earbuds"
   },
   {
       title: "Comfort-lock Ear Wings",
       text: "Comfort-Lock Ear Wings hug your ears for a secure, all-day fit.",
       image: "../images/clock.svg",
-      alt: "alttext"
+      alt: "icon to show stay all day"
   },
   {
       title: "Perfect fit curb",
       text: "Precision curves follow your ears for a secure, comfortable fit all day.",
       image: "../images/music.svg",
-      alt: "alttext"
+      alt: "icon of music"
   }
 ]
 
 //function
 function getInfo () {
   infoBoxes.forEach((infoBox, index) => {
-   // console.log(index + 1);
-   // selected will be the infoBox on out page, e.g. hotsopt-1, hotspot-2, etc
     let selected = document.querySelector(`#hotspot-${index+1}`);
-    //console.log(selected);
 
 
-    //lets create an h2
+    //create and populate h2
     const titleElement = document.createElement('h2');
-    // lets populate the 2
     titleElement.textContent =infoBox.title;
 
-    //lets create an p
+    //create and populate p
     const textElement = document.createElement('p');
-    //lets popilate the p
     textElement.textContent = infoBox.text;
 
     const imageElement = document.createElement('img');
@@ -67,44 +62,26 @@ function getInfo () {
     topWrapper.appendChild(titleElement);
 
 
-    // add the wrapper to the selected hotspot
+    // add the wrapper and p to the selected hotspot
     selected.appendChild(topWrapper);
-    // lets add the p to the selected hotspot
     selected.appendChild(textElement);
   });
 }
 
 getInfo();
 
-// chack whice hotspot is selected now
-let activeWindow = null;
 
+// animation that infoBox pops up
    function popUpWindow() {
     let selected = document.querySelector(`#${this.slot}`);
-
-    // if the selected window already open => close it
-    if (activeWindow === selected) {
-      gsap.to(selected, {  duration: 0.2, autoAlpha: 0, scale: 0});
-      activeWindow = null;
-      return;
-    }
-
-    // if other window is open => close that window
-    if (activeWindow) {
-      gsap.to(activeWindow, { duration: 0.2, autoAlpha: 0, scale: 0 }); 
-    }
-
-    // make window small so that looks like pops up
     gsap.set(selected, { scale: 0, autoAlpha: 0 });
 
-    // window pop up animatiion
     gsap.to(selected, {
       duration: 0.3,
       autoAlpha: 1,
-      scale: 1.01, // make a little bit bigger
+      scale: 1.01,
       ease: "back.out(1.5)",
 
-      // when window pops up and became little bit bigger => make it scale: 1
       onComplete: () => {
         gsap.to(selected, { 
           duration: 0.05, 
@@ -112,15 +89,19 @@ let activeWindow = null;
       }
     });
 
-    // update activeWindow
-    activeWindow = selected;
+  }
 
+  function closeWindow() {
+    let selected = document.querySelector(`#${this.slot}`);
+     gsap.to(selected, { duration: 0.3, autoAlpha: 0, scale: 0, opacity: 0 });
   }
   
  hotspots.forEach(function(hotspot) {
   hotspot.addEventListener("mouseenter", popUpWindow);
+  hotspot.addEventListener("mouseleave", closeWindow);
 });
-  
+
+
   // Handles loading the events for <model-viewer>'s slotted progress bar
 const onProgress = (event) => {
   const progressBar = event.target.querySelector('.progress-bar');
