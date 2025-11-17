@@ -115,5 +115,21 @@ const onProgress = (event) => {
   }
 };
 document.querySelector('model-viewer').addEventListener('progress', onProgress);
+
+
+//slider
+    const divisor = document.querySelector("#divisor");
+    const slider = document.querySelector("#slider");
+
+    function slideDivider() {
+        divisor.style.width = `${slider.value}%`;
+    }
+
+    function resetSlider() {
+        slider.value = 50;
+    }
+
+    slider.addEventListener("input", slideDivider);
+    window.addEventListener("load", resetSlider);
 })();
 
