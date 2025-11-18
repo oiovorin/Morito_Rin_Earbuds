@@ -40,7 +40,7 @@
         </div>
       
 
-      <div id="header-logo" class="col-start-2 col-end-4 m-col-start-5 m-col-end-10 l-col-start-1 l-col-end-4">
+      <div id="header-logo" class="col-start-2 col-end-4 m-col-start-4 m-col-end-10 l-col-start-1 l-col-end-4">
         <a href="https://www.loopearplugs.com">
         <img src="images/loop-logo.svg" alt="loop logo">
         </a>
@@ -55,15 +55,11 @@
   <section id="hero" class="grid-con">
     <h2 class="hidden">main ad</h2>
     <div id="hero-img" class="col-span-full">
-      <img
-  src="images/m-hero.jpg"
-  srcset="
-    images/m-hero.jpg 1200w,
-    images/l-hero.jpg 1400w
-  "
-  sizes="(min-width: 768px) 1200px,
-         (min-width: 1200px) 1400px"
-  alt="hero image of loop earbuds pro">
+     <picture>
+      <source media="(min-width: 1200px)" srcset="images/l-hero.jpg">
+      <source media="(min-width: 768px)" srcset="images/m-hero.jpg">
+      <img src="images/hero.jpg" alt="Hero image of Loop Earbuds Pro">
+</picture>
     </div>
     <div id="hero-title" class="col-span-full">
     <h3 class="col-span-full">Loop Earbuds Pro</h3>
