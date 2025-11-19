@@ -12,6 +12,9 @@
     <link href="css/main.css" rel="stylesheet">
   </head>
 
+ <body>
+  <h1 class="hidden">Loop Earbuds Pro Website</h1>
+
   <header class="grid-con">
       
         <input type="checkbox" id="hamburger">
@@ -37,7 +40,7 @@
         </div>
       
 
-      <div id="header-logo" class="col-start-2 col-end-4 m-col-start-5 m-col-end-10 l-col-start-1 l-col-end-4">
+      <div id="header-logo" class="col-start-2 col-end-4 m-col-start-4 m-col-end-10 l-col-start-1 l-col-end-4">
         <a href="https://www.loopearplugs.com">
         <img src="images/loop-logo.svg" alt="loop logo">
         </a>
@@ -46,11 +49,56 @@
     <div id="shopping-cart" class="col-start-4 col-end-5 m-col-start-12 m-col-end-13 l-col-start-12 l-col-end-13">
       <img src="images/shopping-cart.svg" alt="shopping cart icon">
     </div>
-    </div>
   </header>
+
+
+  <section id="hero" class="grid-con">
+    <h2 class="hidden">main ad</h2>
+    <div id="hero-img" class="col-span-full">
+     <picture>
+      <source media="(min-width: 1200px)" srcset="images/l-hero.jpg">
+      <source media="(min-width: 768px)" srcset="images/m-hero.jpg">
+      <img src="images/hero.jpg" alt="Hero image of Loop Earbuds Pro">
+</picture>
+    </div>
+    <div id="hero-title" class="col-span-full">
+    <h3 class="col-span-full">Loop Earbuds Pro</h3>
+    <p class="col-span-full">Stay aligned with your rhythm, with earbuds designed to balance sound and life.</p>
+    <button>Shop Loop Earbuds Pro</button>
+    </div>
+  </section>
+
+  <div class="col-span-full">
+            <canvas id="explode-view"></canvas> 
+  </div>
+
+  <section id="feature-box" class="grid-con">
+    <h2 class="hidden">Main feature on loop earbuds pro</h2>
+    <h3 class="col-span-full" id="featureBox-title">Why choose Loop Earbuds Pro?</h3>
+    <div id="box-con" class="col-span-full">
+
+    <div class="featureBox">
+        <img src="images/comfort.jpg" alt="earbuds on the cube">
+        <h4>Pressure-free Comfort</h4>
+        <p>Designed to feel weightless, even after hours of wear.</p>
+      </div>
+
+      <div class="featureBox">
+        <img src="images/soundwave.jpg" alt="earbuds with sound wave image">
+        <h4>Noise Reduction</h4>
+        <p>Crafted to quiet the world—so you can focus on what truly matters.</p>
+      </div>
+
+    <div class="featureBox">
+        <img src="images/earbuds.jpg" alt="earbuds shape show poster">
+        <h4>Minimal & Premium Design</h4>
+        <p>Where simplicity meets elegance—beauty shaped with intention.</p>
+      </div>
+
+  </div>
+
+  </section>
   
-  <body>
-    <h1 class="hidden">Loop Earbuds Pro Website</h1>
     <section class="full-width-grid-con" id="model-viewer-con">
     <div class="grid-con" id="model-viewer-section">
       <div id="model-viewer-title" class="col-span-full">
@@ -150,10 +198,99 @@
 </div>
 </div>
 </section>
+
+<div id="xray-slider" class="grid-con">
+  <h2 class="hidden">Show X ray slider</h2>   
+  <h3 class="col-span-full">Beyond the Surface</h3>
+  <p class="col-span-full">Explore the inner design that powers exceptional performance.</p>
+  <div id="xray" class="col-span-full">
+    <div id="divisor"></div>
+    <input type="range" min="0" max="100" value="50" id="slider">
+  </div>    
+</div>
+
+<footer class="full-width-grid-con">
+  <div id="footer-nav" class="grid-con">
+  <nav class="col-span-full">
+    <ul>
+      <li class="footer-main-nav col-start-1 col-end-3 m-col-start-1 m-col-end-7 l-col-start-1 l-col-end-4">
+        <a href="#">Shop</a>
+        <ul class="sub-nav">
+          <li><a href="#">Best Sellers</a></li>
+          <li><a href="#">Bundle & Save</a></li>
+          <li><a href="#">All Products</a></li>
+          <li><a href="#">Gift Ideas</a></li>
+        </ul>
+      </li>
+
+      <li class="footer-main-nav col-start-3 col-end-5 m-col-start-7 m-col-end-13 l-col-start-4 l-col-end-7">
+        <a href="#">Customer Care</a>
+        <ul class="sub-nav">
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Warranty</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </li>
+
+      <li class="footer-main-nav col-start-1 col-end-3 m-col-start-1 m-col-end-7 l-col-start-7 l-col-end-10">
+        <a href="#">Company</a>
+        <ul class="sub-nav">
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Loop Rewards</a></li>
+          <li><a href="#">Loop Referrals</a></li>
+          <li><a href="#">Loop for Business</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </li>
+
+      <li class="footer-main-nav col-start-3 col-end-5 m-col-start-7 m-col-end-13 l-col-start-10 l-col-end-13">
+        <a href="#">Policies</a>
+        <ul class="sub-nav">
+          <li><a href="#">Legal</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Cookie consent</a></li>
+          <li><a href="#">Imprint</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <hr id="footer-line" class="col-span-full">
+
+  <div id="footer-sns" class="col-start-2 col-end-4 m-col-start-1 m-col-end-5">
+    <a href="https://www.facebook.com/loopearplugs">
+      <img src="images/facebook.svg" alt="Facecook icon">
+    </a>
+    <a href="https://www.linkedin.com/company/loopearplugs/">
+      <img src="images/linkedin.svg" alt="LinkedIn icon">
+    </a>
+    <a href="https://www.reddit.com/r/LoopEarplugs/">
+      <img src="images/reddit.svg" alt="Reddit icon">
+    </a>
+    <a href="https://jp.pinterest.com/loopearplugs/">
+      <img src="images/pinterest.svg" alt="Pinterest icon">
+    </a>
+    <a href="https://www.instagram.com/loopearplugs/">
+      <img src="images/instagram.svg" alt="Instagram icon" id="instagram">
+    </a>
+    <a href="https://www.tiktok.com/@loopearplugs">
+      <img src="images/tiktok.svg" alt="Tiktok icon" id="tiktok">
+    </a>
+  </div>
+
+  <small id="copyright" class="col-span-full m-col-start-9 m-col-end-13 l-col-start-10 l-col-end-13">copyright©Loop LoopEarplugs2025</small>
+</div>
+
+</footer>
 <!-- link to greensock main library -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <!-- Loads <model-viewer> for browsers: -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.js"></script>
     <!-- Our JS folder last -->
     <script src="js/main.js"></script>
   </body>
