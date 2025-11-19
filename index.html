@@ -40,7 +40,7 @@
         </div>
       
 
-      <div id="header-logo" class="col-start-2 col-end-4 m-col-start-5 m-col-end-10 l-col-start-1 l-col-end-4">
+      <div id="header-logo" class="col-start-2 col-end-4 m-col-start-4 m-col-end-10 l-col-start-1 l-col-end-4">
         <a href="https://www.loopearplugs.com">
         <img src="images/loop-logo.svg" alt="loop logo">
         </a>
@@ -55,15 +55,11 @@
   <section id="hero" class="grid-con">
     <h2 class="hidden">main ad</h2>
     <div id="hero-img" class="col-span-full">
-      <img
-  src="images/m-hero.jpg"
-  srcset="
-    images/m-hero.jpg 1200w,
-    images/l-hero.jpg 1400w
-  "
-  sizes="(min-width: 768px) 1200px,
-         (min-width: 1200px) 1400px"
-  alt="hero image of loop earbuds pro">
+     <picture>
+      <source media="(min-width: 1200px)" srcset="images/l-hero.jpg">
+      <source media="(min-width: 768px)" srcset="images/m-hero.jpg">
+      <img src="images/hero.jpg" alt="Hero image of Loop Earbuds Pro">
+</picture>
     </div>
     <div id="hero-title" class="col-span-full">
     <h3 class="col-span-full">Loop Earbuds Pro</h3>
@@ -71,6 +67,10 @@
     <button>Shop Loop Earbuds Pro</button>
     </div>
   </section>
+
+  <div class="col-span-full">
+            <canvas id="explode-view"></canvas> 
+  </div>
 
   <section id="feature-box" class="grid-con">
     <h2 class="hidden">Main feature on loop earbuds pro</h2>
@@ -287,6 +287,9 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <!-- Loads <model-viewer> for browsers: -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.js"></script>
     <!-- Our JS folder last -->
     <script src="js/main.js"></script>
   </body>
