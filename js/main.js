@@ -52,6 +52,21 @@
     }
 
 
+    // function box fade-in
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to("#featureBox-title, .featureBox", {
+      opacity: 1,
+      y: 0,
+      ease: "power1.out",
+        scrollTrigger: {
+            trigger: "#feature-box",
+            start: "top 80%",
+            end: "top 50%",
+            scrub: 1,
+        }
+    })
+
     // model viewer
    const hotspots = document.querySelectorAll(".Hotspot");
 
