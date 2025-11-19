@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.plyr.io/3.8.3/plyr.css" />
     <link rel="stylesheet" href="css/grid.css">
     <link href="css/main.css" rel="stylesheet">
   </head>
@@ -69,7 +70,14 @@
     </div>
   </section>
 
-  <div class="col-span-full">
+  <div id="mob-video">
+    <video id="player" playsinline controls data-poster="images/webp/animation0000.webp">
+  <source src="video/earbuds.mp4" type="video/mp4">
+  <source src="video/earbuds.webm" type="video/webm">
+</video>
+  </div>
+
+  <div id="scroll-animation" class="col-span-full">
             <canvas id="explode-view"></canvas> 
   </div>
 
@@ -294,6 +302,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.js"></script>
+
+    <!-- video player-->
+     <script src="https://cdn.plyr.io/3.8.3/plyr.js"></script>
     <!-- Our JS folder last -->
     <script src="js/main.js"></script>
   </body>

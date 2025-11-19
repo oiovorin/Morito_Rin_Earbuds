@@ -1,4 +1,8 @@
 @use '../abstracts/mixins';
+#mob-video {
+    margin: 100px 0 50px 0;
+    --plyr-color-main: #6fa1a0;
+}
 
 #feature-box {
     margin: 100px 0;
@@ -40,6 +44,10 @@
     }
 }
 
+#scroll-animation {
+    display: none;
+}
+
 #explode-view {
     max-width: 100%;
     margin: 100px 0;
@@ -56,6 +64,14 @@
         margin-bottom: 100px;
     }
     }
+
+    #mob-video {
+        display: none;
+    }
+
+    #scroll-animation {
+    display: block;
+}
 }
 
 @media screen and (min-width:1200px) {

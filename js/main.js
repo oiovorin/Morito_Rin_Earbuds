@@ -24,12 +24,10 @@
     // run a for loop to populate images array
     for(let i=0; i<frameCount; i++) {
         const img = new Image();
-        img.src = `images/animation${(i+1).toString().padStart(4, '0')}.webp`;
+        img.src = `images/webp/animation${(i+1).toString().padStart(4, '0')}.webp`;
         images.push(img);
     }
     
-
-    console.log(images);
 
     gsap.to(buds, {
         frame: 399,
@@ -50,6 +48,9 @@
         context.clearRect(0,0,canvas.width, canvas.height);
         context.drawImage(images[buds.frame], 0,0);
     }
+
+    // video player for mobile
+    const player = new Plyr('#player');
 
 
     // function box fade-in
