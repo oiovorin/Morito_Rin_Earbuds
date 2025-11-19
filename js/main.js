@@ -52,7 +52,47 @@
     }
 
 
+    // function box fade-in
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to("#featureBox-title, .featureBox", {
+      opacity: 1,
+      y: 0,
+      ease: "power1.out",
+      stagger: 0.4,
+        scrollTrigger: {
+            trigger: "#feature-box",
+            start: "top 80%",
+            end: "top 50%",
+            scrub: 1,
+        }
+    })
+
     // model viewer
+
+    gsap.to("#model-viewer-title", {
+      opacity: 1,
+      y: 0,
+      ease: "power1.out",
+        scrollTrigger: {
+            trigger: "#model-viewer-con",
+            start: "top 70%",
+            end: "top 50%",
+            scrub: 1
+        }
+    })
+
+    gsap.to("model-viewer", {
+      opacity: 1,
+      ease: "power1.out",
+        scrollTrigger: {
+            trigger: "#model-viewer-con",
+            start: "top 70%",
+            end: "top 50%",
+            scrub: 1,
+        }
+    })
+    
    const hotspots = document.querySelectorAll(".Hotspot");
 
   const infoBoxes = [

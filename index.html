@@ -58,7 +58,8 @@
      <picture>
       <source media="(min-width: 1200px)" srcset="images/l-hero.jpg">
       <source media="(min-width: 768px)" srcset="images/m-hero.jpg">
-      <img src="images/hero.jpg" alt="Hero image of Loop Earbuds Pro">
+      <source media="(min-width: 500px)" srcset="images/hero.jpg">
+      <img src="images/s-hero.jpg" alt="Hero image of Loop Earbuds Pro">
 </picture>
     </div>
     <div id="hero-title" class="col-span-full">
@@ -72,34 +73,37 @@
             <canvas id="explode-view"></canvas> 
   </div>
 
-  <section id="feature-box" class="grid-con">
+  <section id="feature-box" class="full-width-grid-con">
     <h2 class="hidden">Main feature on loop earbuds pro</h2>
-    <h3 class="col-span-full">Why choose Loop Earbuds Pro?</h3>
+    <div class="grid-con">
+    <h3 class="col-span-full" id="featureBox-title">Why choose Loop Earbuds Pro?</h3>
     <div id="box-con" class="col-span-full">
+
+    <div class="featureBox">
+        <img src="images/comfort.jpg" alt="earbuds on the cube">
+        <h4>Pressure-free Comfort</h4>
+        <p>Designed to feel weightless, even after hours of wear.</p>
+      </div>
+
       <div class="featureBox">
-        <img src="images/" alt="">
+        <img src="images/soundwave.jpg" alt="earbuds with sound wave image">
         <h4>Noise Reduction</h4>
         <p>Crafted to quiet the world—so you can focus on what truly matters.</p>
       </div>
 
     <div class="featureBox">
-        <img src="images/" alt="">
-        <h4>Pressure-free Comfort</h4>
-        <p>Designed to feel weightless, even after hours of wear.</p>
-      </div>
-
-    <div class="featureBox">
-        <img src="images/" alt="">
-        <h4>Minimal & Premium Design</h4>
+        <img src="images/earbuds.jpg" alt="earbuds shape show poster">
+        <h4>Minimal Design</h4>
         <p>Where simplicity meets elegance—beauty shaped with intention.</p>
       </div>
 
   </div>
+  </div>
 
   </section>
   
-    <section class="full-width-grid-con" id="model-viewer-con">
-    <div class="grid-con" id="model-viewer-section">
+    <section id="model-viewer-con"  class="grid-con">
+    <div id="model-viewer-section" class="col-span-full">
       <div id="model-viewer-title" class="col-span-full">
         <h2>Explore Features</h2>
         <p>Loop Earbuds Pro</p>
