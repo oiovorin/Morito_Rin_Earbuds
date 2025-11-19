@@ -1,0 +1,139 @@
+@use '../abstracts/mixins';
+
+header {
+    #header-logo img {
+    margin-top: 15px;
+    height: 30px;
+    margin-bottom: 15px;
+}
+
+#header-logo {
+    @include mixins.flex-center;
+}
+
+#shopping-cart {
+    height: auto;
+    width: 30px;
+    margin-top: 15px;
+    display: grid;
+    justify-self: end;
+}
+
+#menu-show img{
+    height: 25px;
+    width: auto;
+    margin-top: 15px;
+}
+
+#menu-show {
+    cursor: pointer;
+}
+
+input#hamburger {
+        display: none;
+    }
+
+    #header-nav nav ul {
+        list-style: none;
+    }
+
+    #header-nav nav ul li {
+        margin: 30px auto;
+    }
+
+
+    #header-nav nav ul li a {
+        text-decoration: none;
+        color: black;
+        font-size: 25px;
+    }
+
+    #header-nav-close {
+        font-size: 25px;
+        color: black;
+        display: flex;
+        justify-content: end;
+        margin-right: 30px;
+        margin-top: 30px;
+        cursor: pointer;
+    }
+
+    #header-nav {
+        opacity: 0;
+        transform: translateX(-100%);
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: #fff;
+        z-index: 100;
+    }
+
+    input#hamburger:checked ~ #header-nav {
+        transform: translateX(0);
+        opacity: 1;
+        transition: opacity 0.1s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    header {
+        #header-logo {
+            display: grid;
+            justify-self: center;
+        }
+    }
+    
+}
+
+@media screen and (min-width: 1200px) {
+    header {
+        
+        #l-header-flex {
+            display: flex;
+        justify-content: space-around;
+        }
+        
+        #header-logo {
+            order: 1;
+            justify-self: baseline;
+        }
+
+        #header-nav {
+            order: 2;
+            opacity: 1;
+            transform: translateX(0);
+            background-color: transparent;
+            height: auto;
+            width: auto;
+            position: static;
+        }
+
+        #shopping-cart {
+            order: 3;
+        }
+
+        #header-nav nav ul {
+            display: flex;
+            gap: 35px; 
+            align-items: center;
+        }
+
+        #header-nav nav ul li {
+            margin: 5px 0 0 0;
+        }
+
+        #mob-menu, #header-nav-close {
+            display: none;
+        }
+
+        #header-nav nav ul li a {
+            font-size: 18px;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.04 16.04">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ebebeb;
+      }
+    </style>
+  </defs>
+  <g id="Layer_2-2" data-name="Layer 2">
+    <g id="SVGRepo_iconCarrier" data-name="SVGRepo iconCarrier">
+      <path class="cls-1" d="M.92,0h14.21c.48,0,.92.43.92.92v14.21c0,.48-.43.92-.92.92H.92c-.48,0-.92-.43-.92-.92V.92c0-.48.43-.92.92-.92ZM11.39,9.01h2.22l.1-2.12h-2.31v-1.57c0-.6.12-.94.89-.94h1.35l.05-1.98s-.6-.1-1.47-.1c-2.12,0-3.06,1.32-3.06,2.75v1.83h-1.57v2.12h1.57v5.88h2.24v-5.88Z"/>
+    </g>
+  </g>
+</svg>
