@@ -8,9 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.plyr.io/3.8.3/plyr.css" />
     <link rel="stylesheet" href="css/grid.css">
     <link href="css/main.css" rel="stylesheet">
   </head>
+
+ <body>
+  <h1 class="hidden">Loop Earbuds Pro Website</h1>
 
   <header class="grid-con">
       
@@ -37,7 +41,7 @@
         </div>
       
 
-      <div id="header-logo" class="col-start-2 col-end-4 m-col-start-5 m-col-end-10 l-col-start-1 l-col-end-4">
+      <div id="header-logo" class="col-start-2 col-end-4 m-col-start-4 m-col-end-10 l-col-start-1 l-col-end-4">
         <a href="https://www.loopearplugs.com">
         <img src="images/loop-logo.svg" alt="loop logo">
         </a>
@@ -46,13 +50,68 @@
     <div id="shopping-cart" class="col-start-4 col-end-5 m-col-start-12 m-col-end-13 l-col-start-12 l-col-end-13">
       <img src="images/shopping-cart.svg" alt="shopping cart icon">
     </div>
-    </div>
   </header>
+
+
+  <section id="hero" class="grid-con">
+    <h2 class="hidden">main ad</h2>
+    <div id="hero-img" class="col-span-full">
+     <picture>
+      <source media="(min-width: 1200px)" srcset="images/l-hero.jpg">
+      <source media="(min-width: 768px)" srcset="images/m-hero.jpg">
+      <source media="(min-width: 500px)" srcset="images/hero.jpg">
+      <img src="images/s-hero.jpg" alt="Hero image of Loop Earbuds Pro">
+</picture>
+    </div>
+    <div id="hero-title" class="col-span-full">
+    <h3 class="col-span-full">Loop Earbuds Pro</h3>
+    <p class="col-span-full">Stay aligned with your rhythm, with earbuds designed to balance sound and life.</p>
+    <button>Shop Loop Earbuds Pro</button>
+    </div>
+  </section>
+
+  <div id="mob-video">
+    <video id="player" playsinline controls data-poster="images/webp/animation0000.webp">
+  <source src="video/earbuds.mp4" type="video/mp4">
+  <source src="video/earbuds.webm" type="video/webm">
+</video>
+  </div>
+
+  <div id="scroll-animation" class="col-span-full">
+            <canvas id="explode-view"></canvas> 
+  </div>
+
+  <section id="feature-box" class="full-width-grid-con">
+    <h2 class="hidden">Main feature on loop earbuds pro</h2>
+    <div class="grid-con">
+    <h3 class="col-span-full" id="featureBox-title">Why choose Loop Earbuds Pro?</h3>
+    <div id="box-con" class="col-span-full">
+
+    <div class="featureBox">
+        <img src="images/comfort.jpg" alt="earbuds on the cube">
+        <h4>Pressure-free Comfort</h4>
+        <p>Designed to feel weightless, even after hours of wear.</p>
+      </div>
+
+      <div class="featureBox">
+        <img src="images/soundwave.jpg" alt="earbuds with sound wave image">
+        <h4>Noise Reduction</h4>
+        <p>Crafted to quiet the world—so you can focus on what truly matters.</p>
+      </div>
+
+    <div class="featureBox">
+        <img src="images/earbuds.jpg" alt="earbuds shape show poster">
+        <h4>Minimal Design</h4>
+        <p>Where simplicity meets elegance—beauty shaped with intention.</p>
+      </div>
+
+  </div>
+  </div>
+
+  </section>
   
-  <body>
-    <h1 class="hidden">Loop Earbuds Pro Website</h1>
-    <section class="full-width-grid-con" id="model-viewer-con">
-    <div class="grid-con" id="model-viewer-section">
+  <section id="model-viewer-con"  class="grid-con">
+    <div id="model-viewer-section" class="col-span-full">
       <div id="model-viewer-title" class="col-span-full">
         <h2>Explore Features</h2>
         <p>Loop Earbuds Pro</p>
@@ -97,59 +156,30 @@
 </model-viewer>
 </div>
 
-<div class="mobile-infoBox col-span-full">
-  <div class="infoBox">
-    <div class="hotspot-icon">
-      <img src="images/charge.svg" alt="icon for charging feature">
-    </div>
-    <div class="hotspot-title">
-      <h2>Ultra-fast Charging</h2>
-      <p>Ultra-Fast Charging powers your earbuds in minutes for hours of listening.</p>
-    </div>
+<section id="mobile-content">
+  <div class="col-span-full">
+  <div id="hotspot-mobile-1" class="col-span-full mobile-box"></div>
+  <div id="hotspot-mobile-2" class="col-span-full mobile-box"></div>
+  <div id="hotspot-mobile-3" class="col-span-full mobile-box"></div>
+  <div id="hotspot-mobile-4" class="col-span-full mobile-box"></div>
+  <div id="hotspot-mobile-5" class="col-span-full mobile-box"></div>
   </div>
-
-  <div class="infoBox">
-    <div class="hotspot-icon" id="volume">
-      <img src="images/volume.svg" alt="icon of volume">
-    </div>
-    <div class="hotspot-title">
-      <h2>Volume knob</h2>
-      <p>Precision volume handles allow you to fine-tune your audio exactly the way you like.</p>
-    </div>
-  </div>
-
-  <div class="infoBox">
-    <div class="hotspot-icon">
-      <img src="images/soft.svg" alt="icon of soft">
-    </div>
-    <div class="hotspot-title">
-      <h2>Ear Cushions</h2>
-      <p>Soft cushions rest gently for all-day comfort and reduced pressure.</p>
-    </div>
-  </div>
-
-  <div class="infoBox">
-    <div class="hotspot-icon">
-      <img src="images/clock.svg" alt="icon of clock">
-    </div>
-    <div class="hotspot-title">
-      <h2>Comfort-lock Ear Wings</h2>
-      <p>Comfort-Lock Ear Wings hug your ears for a secure, all-day fit.</p>
-    </div>
-  </div>
-
-  <div class="infoBox">
-    <div class="hotspot-icon">
-      <img src="images/music.svg" alt="icon of music">
-    </div>
-    <div class="hotspot-title">
-      <h2>Perfect fit curb</h2>
-      <p>Precision curves follow your ears for a secure, comfortable fit all day.</p>
-    </div>
-  </div>
-</div>
-</div>
 </section>
+
+</div>
+
+</section>
+
+
+<div id="xray-slider" class="grid-con">
+  <h2 class="hidden">Show X ray slider</h2>   
+  <h3 class="col-span-full">Beyond the Surface</h3>
+  <p class="col-span-full">Explore the inner design that powers exceptional performance.</p>
+  <div id="xray" class="col-span-full">
+    <div id="divisor"></div>
+    <input type="range" min="0" max="100" value="50" id="slider">
+  </div>    
+</div>
 
 <footer class="full-width-grid-con">
   <div id="footer-nav" class="grid-con">
@@ -230,6 +260,12 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <!-- Loads <model-viewer> for browsers: -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.js"></script>
+
+    <!-- video player-->
+     <script src="https://cdn.plyr.io/3.8.3/plyr.js"></script>
     <!-- Our JS folder last -->
     <script src="js/main.js"></script>
   </body>
