@@ -8,7 +8,7 @@
     canvas.width = 1920;
     canvas.height = 1080;
 
-    const frameCount = 400;
+    const frameCount = 410;
     const images = [];
     const buds = {
         frame: 0
@@ -22,7 +22,7 @@
     
 
     gsap.to(buds, {
-        frame: 399,
+        frame: 409,
         snap: "frame",
         scrollTrigger: {
             trigger: "#explode-view",
@@ -250,5 +250,28 @@ document.querySelector('model-viewer').addEventListener('progress', onProgress);
             scrub: 1
         }
     })
+
+    // support box animation
+     gsap.to(".support-box", {
+      duration: 0.5,
+      opacity: 1,
+      scale: 1.01,
+      stagger: 0.5,
+      ease: "back.out(1.5)",
+
+      onComplete: () => {
+        gsap.to(selected, { 
+          duration: 0.1, 
+          scale: 1 }); 
+      },
+
+      scrollTrigger: {
+            trigger: "#support-con",
+            start: "top 70%",
+            end: "top 50%",
+            scrub: 1,
+        }
+    });
+
 })();
 

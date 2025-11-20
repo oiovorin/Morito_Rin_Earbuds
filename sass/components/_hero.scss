@@ -64,10 +64,12 @@
             padding: 10px 20px;
             font-size: 16px;
             margin-top: 40px;
+            transform: scale(1);
             &:hover {
                 background-color: #000;
                 color: #fff;
                 filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.485));
+                transform: scale(1.05);
                 transition: all 0.3s ease-in-out;
             }
         }

@@ -46,6 +46,9 @@ input#hamburger {
         text-decoration: none;
         color: black;
         font-size: 25px;
+        &:hover {
+                text-decoration: underline;
+            }
     }
 
     #header-nav-close {
