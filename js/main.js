@@ -252,5 +252,16 @@ document.querySelector('model-viewer').addEventListener('progress', onProgress);
 
     slider.addEventListener("input", slideDivider);
     window.addEventListener("load", resetSlider);
+
+    gsap.to("#xray-slider", {
+      opacity: 1,
+      ease: "power1.out",
+        scrollTrigger: {
+            trigger: "#xray-slider",
+            start: "top 60%",
+            end: "top 50%",
+            scrub: 1
+        }
+    })
 })();
 
