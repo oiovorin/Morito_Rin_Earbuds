@@ -24,12 +24,10 @@
     // run a for loop to populate images array
     for(let i=0; i<frameCount; i++) {
         const img = new Image();
-        img.src = `images/animation${(i+1).toString().padStart(4, '0')}.webp`;
+        img.src = `images/webp/animation${(i+1).toString().padStart(4, '0')}.webp`;
         images.push(img);
     }
     
-
-    console.log(images);
 
     gsap.to(buds, {
         frame: 399,
@@ -51,6 +49,9 @@
         context.drawImage(images[buds.frame], 0,0);
     }
 
+    // video player for mobile
+    const player = new Plyr('#player');
+
 
     // function box fade-in
     gsap.registerPlugin(ScrollTrigger);
@@ -59,6 +60,7 @@
       opacity: 1,
       y: 0,
       ease: "power1.out",
+      stagger: 0.4,
         scrollTrigger: {
             trigger: "#feature-box",
             start: "top 80%",
@@ -68,6 +70,30 @@
     })
 
     // model viewer
+
+    gsap.to("#model-viewer-title", {
+      opacity: 1,
+      y: 0,
+      ease: "power1.out",
+        scrollTrigger: {
+            trigger: "#model-viewer-con",
+            start: "top 70%",
+            end: "top 50%",
+            scrub: 1
+        }
+    })
+
+    gsap.to("model-viewer", {
+      opacity: 1,
+      ease: "power1.out",
+        scrollTrigger: {
+            trigger: "#model-viewer-con",
+            start: "top 70%",
+            end: "top 50%",
+            scrub: 1,
+        }
+    })
+    
    const hotspots = document.querySelectorAll(".Hotspot");
 
   const infoBoxes = [
@@ -107,7 +133,7 @@
 function getInfo () {
   infoBoxes.forEach((infoBox, index) => {
     let selected = document.querySelector(`#hotspot-${index+1}`);
-
+    let mobileSelected = document.querySelector(`#hotspot-mobile-${index+1}`);
 
     //create and populate h2
     const titleElement = document.createElement('h2');
@@ -128,15 +154,43 @@ function getInfo () {
     topWrapper.appendChild(imageElement);
     topWrapper.appendChild(titleElement);
 
-
     // add the wrapper and p to the selected hotspot
     selected.appendChild(topWrapper);
     selected.appendChild(textElement);
+
+    //create image wrapper
+    const imgWrapper = document.createElement('div');
+    imgWrapper.classList.add('img-wrap');
+    imgWrapper.appendChild(imageElement.cloneNode(true));
+
+     // create wrapper for h2 and p to use flex box
+    const textWrapper = document.createElement('div');
+    textWrapper.classList.add('text-wrap');
+    textWrapper.appendChild(titleElement.cloneNode(true));
+    textWrapper.appendChild(textElement.cloneNode(true));
+    
+    mobileSelected.appendChild(textWrapper);
+    mobileSelected.appendChild(imgWrapper);
+
   });
 }
 
 getInfo();
 
+
+gsap.to(".mobile-box", {
+      opacity: 1,
+      x: 0,
+      duration: 2,
+      ease: "power1.out",
+      stagger: 1,
+        scrollTrigger: {
+            trigger: "#mobile-content",
+            start: "top 70%",
+            end: "top 50%",
+            scrub: 1,
+        }
+    })
 
 // animation that infoBox pops up
    function popUpWindow() {
@@ -198,5 +252,16 @@ document.querySelector('model-viewer').addEventListener('progress', onProgress);
 
     slider.addEventListener("input", slideDivider);
     window.addEventListener("load", resetSlider);
+
+    gsap.to("#xray-slider", {
+      opacity: 1,
+      ease: "power1.out",
+        scrollTrigger: {
+            trigger: "#xray-slider",
+            start: "top 60%",
+            end: "top 50%",
+            scrub: 1
+        }
+    })
 })();
 
