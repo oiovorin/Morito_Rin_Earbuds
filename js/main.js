@@ -8,20 +8,12 @@
     canvas.width = 1920;
     canvas.height = 1080;
 
-
-    // how many still frames do we have, you will need to adjust this
     const frameCount = 400;
-
-    // array to hold images
     const images = [];
-
-    //object will hold the current frame
-    // we will use GreenSock to animate the frame property
     const buds = {
         frame: 0
     }
 
-    // run a for loop to populate images array
     for(let i=0; i<frameCount; i++) {
         const img = new Image();
         img.src = `images/webp/animation${(i+1).toString().padStart(4, '0')}.webp`;
@@ -44,7 +36,6 @@
     images[0].addEventListener("load", render);
 
     function render() {
-        //console.log(images[buds.frame]);
         context.clearRect(0,0,canvas.width, canvas.height);
         context.drawImage(images[buds.frame], 0,0);
     }
@@ -129,17 +120,16 @@
   }
 ]
 
-//function
 function getInfo () {
   infoBoxes.forEach((infoBox, index) => {
     let selected = document.querySelector(`#hotspot-${index+1}`);
     let mobileSelected = document.querySelector(`#hotspot-mobile-${index+1}`);
 
-    //create and populate h2
+
     const titleElement = document.createElement('h2');
     titleElement.textContent =infoBox.title;
 
-    //create and populate p
+
     const textElement = document.createElement('p');
     textElement.textContent = infoBox.text;
 
@@ -148,22 +138,19 @@ function getInfo () {
     imageElement.alt = infoBox.alt;
 
     
-    // create wrapper for img and h2 to use flex box
     const topWrapper = document.createElement('div');
     topWrapper.classList.add('top-flex');
     topWrapper.appendChild(imageElement);
     topWrapper.appendChild(titleElement);
 
-    // add the wrapper and p to the selected hotspot
     selected.appendChild(topWrapper);
     selected.appendChild(textElement);
 
-    //create image wrapper
+    //mobile infoBox
     const imgWrapper = document.createElement('div');
     imgWrapper.classList.add('img-wrap');
     imgWrapper.appendChild(imageElement.cloneNode(true));
 
-     // create wrapper for h2 and p to use flex box
     const textWrapper = document.createElement('div');
     textWrapper.classList.add('text-wrap');
     textWrapper.appendChild(titleElement.cloneNode(true));
