@@ -133,7 +133,7 @@
 function getInfo () {
   infoBoxes.forEach((infoBox, index) => {
     let selected = document.querySelector(`#hotspot-${index+1}`);
-
+    let mobileSelected = document.querySelector(`#hotspot-mobile-${index+1}`);
 
     //create and populate h2
     const titleElement = document.createElement('h2');
@@ -154,15 +154,43 @@ function getInfo () {
     topWrapper.appendChild(imageElement);
     topWrapper.appendChild(titleElement);
 
-
     // add the wrapper and p to the selected hotspot
     selected.appendChild(topWrapper);
     selected.appendChild(textElement);
+
+    //create image wrapper
+    const imgWrapper = document.createElement('div');
+    imgWrapper.classList.add('img-wrap');
+    imgWrapper.appendChild(imageElement.cloneNode(true));
+
+     // create wrapper for h2 and p to use flex box
+    const textWrapper = document.createElement('div');
+    textWrapper.classList.add('text-wrap');
+    textWrapper.appendChild(titleElement.cloneNode(true));
+    textWrapper.appendChild(textElement.cloneNode(true));
+    
+    mobileSelected.appendChild(textWrapper);
+    mobileSelected.appendChild(imgWrapper);
+
   });
 }
 
 getInfo();
 
+
+gsap.to(".mobile-box", {
+      opacity: 1,
+      x: 0,
+      duration: 2,
+      ease: "power1.out",
+      stagger: 1,
+        scrollTrigger: {
+            trigger: "#mobile-content",
+            start: "top 70%",
+            end: "top 50%",
+            scrub: 1,
+        }
+    })
 
 // animation that infoBox pops up
    function popUpWindow() {
